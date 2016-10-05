@@ -1,4 +1,5 @@
 class profile::wordpress::db {
+  include profile::linux::selinux
 
   class { '::mysql::server':
     root_password           => lookup('wordpress_passwd'),
