@@ -17,3 +17,4 @@ forge "http://forge.puppetlabs.com"
 #  :branch => 'docs_experiment'
 
 mod 'hunner-wordpress', '1.0.0'
+mod 'puppet-hiera', '2.1.2'
