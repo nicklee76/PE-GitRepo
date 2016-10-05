@@ -18,3 +18,5 @@ forge "http://forge.puppetlabs.com"
 
 mod 'hunner-wordpress', '1.0.0'
 mod 'puppet-hiera', '2.1.2'
+mod 'puppetlabs-stdlib', '4.12.0'
+mod 'puppetlabs-inifile', '1.6.0'
