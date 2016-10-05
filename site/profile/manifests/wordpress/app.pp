@@ -17,6 +17,11 @@ class profile::wordpress::app (
     before => Wordpress::Instance::App['/opt/wordpress'],
   }
   
+  package { 'php-mysql':
+    ensure => present,
+    before => Class['apache'],
+  }
+  
   wordpress::instance::app { '/opt/wordpress':
     install_dir          => '/opt/wordpress',
     install_url          => 'http://wordpress.org',
