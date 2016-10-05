@@ -1,6 +1,15 @@
 class profile::wordpress::app (
   $db_host,
 ) {
+  include apache
+  
+  apache::vhost { 'wordpress':
+    vhost_name => '*',
+    port => '80',
+    docroot => '/opt/wordpress',
+    priority => '10',
+  }
+    
   package { 'wget':
     ensure => present,
     before => Wordpress::Instance::App['/opt/wordpress'],
