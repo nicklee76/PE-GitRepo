@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'cloudpassage' do
-  let(:params) {{'apikey' => 'dummykey'}}
+  let(:params) {{'agentkey' => 'dummykey'}}
 
   platforms = {
     'Debian'      => {

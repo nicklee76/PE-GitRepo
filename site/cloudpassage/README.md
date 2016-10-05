@@ -17,11 +17,11 @@ The cloudpassage module installs and configures the CloudPassage Halo agent.
 ## Usage
 
 All interaction with the cloudpassage module can be done through the main cloudpassage class.
-The `apikey` parameter must be specified for the class to function.
+The `agentkey` parameter must be specified for the class to function.
 
 ```
 class { 'cloudpassage':
-  apikey => 'myapikey',
+  agentkey => 'myapikey',
 }
 ```
 
@@ -51,7 +51,14 @@ The CloudPassage API key. This value is required.
 
 #### `tags`
 
-The CloudPassage tags that this node will be configured with. Defaults to `$::operatingsystem`.
+The CloudPassage tags that this node will be configured with. If nothing is provided
+will not include --tags in the agent registration process (default set to undef)
+
+#### `managerepos`
+
+Installs the CloudPassage public repositories, repositories are managed elsewhere
+set to false (default sets to true).
+
 
 ## Limitations
 

@@ -1,14 +1,20 @@
+# Cloud Passage agent installation module
+# agentkey = the agent registration key you use to register the node
+# tags = facts or values to use as tags for this node, if empty, tags will not be set
+# managerepos = set to true by default, will add cloudpassage package repo for install
+
 class cloudpassage(
-  $apikey,
-  $tags = $::operatingsystem,
+  $agentkey,
+  $tags = undef,
+  $managerepos = true,
 ) {
 
-  # if you have your own apt/yum module you can comment these out
-  # I recommends puppetlabs-apt for apt
-  case $::operatingsystem {
-    /(?i:debian|ubuntu)/:        { include cloudpassage::apt }
-    /(?i:redhat|centos|fedora)/: { include cloudpassage::yum }
-    default: {}
+  if $managerepos == true {
+    case $::operatingsystem {
+      /(?i:debian|ubuntu)/:        { include cloudpassage::apt }
+      /(?i:redhat|centos|fedora)/: { include cloudpassage::yum }
+      default: {}
+    }
   }
 
   include cloudpassage::install, cloudpassage::config, cloudpassage::service
