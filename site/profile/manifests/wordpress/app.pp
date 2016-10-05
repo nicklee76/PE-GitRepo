@@ -5,6 +5,7 @@ class profile::wordpress::app (
   
   apache::vhost { 'wordpress':
     vhost_name => '*',
+    ip => '0.0.0.0',
     port => '80',
     docroot => '/opt/wordpress',
     priority => '10',
