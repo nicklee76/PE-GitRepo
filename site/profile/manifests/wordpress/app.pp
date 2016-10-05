@@ -1,6 +1,11 @@
 class profile::wordpress::app (
   $db_host,
 ) {
+  package { 'wget':
+    ensure => present,
+    before => Wordpress::Instance::App['/opt/wordpress'],
+  }
+  
   wordpress::instance::app { '/opt/wordpress':
     install_dir          => '/opt/wordpress',
     install_url          => 'http://wordpress.org',
