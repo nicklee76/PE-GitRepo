@@ -11,7 +11,7 @@ class profile::wordpress::db {
   mysql::db { 'wordpress':
     user     => lookup('wordpress_username'),
     password => lookup('wordpress_passwd'),
-    host     => 'localhost',
+    host     => '*',
     grant    => ['ALL'],
   }
 
