@@ -1,0 +1,6 @@
+fixtures:
+  repositories:
+    "apt": "https://github.com/puppetlabs/puppetlabs-apt"
+    "stdlib": "https://github.com/puppetlabs/puppetlabs-stdlib"
+  symlinks:
+    "cloudpassage": "#{source_dir}"
