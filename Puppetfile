@@ -23,4 +23,6 @@ mod 'puppetlabs-inifile', '1.6.0'
 mod 'puppetlabs-puppetserver_gem', '0.2.0'
 mod 'puppetlabs-mysql', '3.9.0'
 mod 'puppet-staging', '2.0.1'
+mod 'puppetlabs-concat', '2.2.0'
+
 
