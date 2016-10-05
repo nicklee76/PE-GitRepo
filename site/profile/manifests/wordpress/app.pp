@@ -3,6 +3,7 @@ class profile::wordpress::app (
 ) {
   include apache
   include apache::mod::php
+  include profile::linux::selinux
   
   apache::vhost { 'wordpress':
     vhost_name => '*',
