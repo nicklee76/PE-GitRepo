@@ -4,12 +4,14 @@ class profile::wordpress::app (
   include apache
   
   apache::vhost { 'wordpress':
-    ip => '0.0.0.0',
+    vhost_name => '*',
     port => '80',
     docroot => '/opt/wordpress',
     priority => '10',
   }
-    
+  
+  apache::listen { '0.0.0.0:80': }
+  
   package { 'wget':
     ensure => present,
     before => Wordpress::Instance::App['/opt/wordpress'],
