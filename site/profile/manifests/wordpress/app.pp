@@ -2,6 +2,7 @@ class profile::wordpress::app (
   $db_host,
 ) {
   include apache
+  include apache::mod::php
   
   apache::vhost { 'wordpress':
     vhost_name => '*',
