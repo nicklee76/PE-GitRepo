@@ -19,7 +19,7 @@ class profile::wordpress::app (
   
   package { 'php-mysql':
     ensure => present,
-    before => Class['apache'],
+    notify => Class['apache'],
   }
   
   wordpress::instance::app { '/opt/wordpress':
