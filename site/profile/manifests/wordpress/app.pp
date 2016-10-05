@@ -25,7 +25,7 @@ class profile::wordpress::app (
   wordpress::instance::app { '/opt/wordpress':
     install_dir          => '/opt/wordpress',
     install_url          => 'http://wordpress.org',
-    version              => '3.8',
+    version              => '4.6.1',
     db_name              => 'wordpress',
     db_host              => $db_host,
     db_user              => lookup('wordpress_username'),
