@@ -5,11 +5,11 @@ class profile::wordpress::app (
   
   apache::vhost { 'wordpress':
     vhost_name => '*',
+    port => '80',
     docroot => '/opt/wordpress',
     priority => '10',
   }
   
-  apache::listen { '0.0.0.0:80': }
   
   package { 'wget':
     ensure => present,
