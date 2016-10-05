@@ -1,10 +1,12 @@
-class profile::wordpress::app {
+class profile::wordpress::app (
+  $db_host,
+) {
   wordpress::instance::app { '/opt/wordpress':
     install_dir          => '/opt/wordpress',
     install_url          => 'http://wordpress.org',
     version              => '3.8',
     db_name              => 'wordpress',
-    db_host              => 'localhost',
+    db_host              => $db_host,
     db_user              => lookup('wordpress_username'),
     db_password          => lookup('wordpress_passwd'),
     wp_owner             => 'root',
