@@ -23,6 +23,10 @@ class profile::wordpress::app (
     notify => Class['apache'],
   }
   
+  package { 'php-gd' :
+    ensure => present,
+  }
+  
   wordpress::instance::app { '/opt/wordpress':
     install_dir          => '/opt/wordpress',
     install_url          => 'http://wordpress.org',
