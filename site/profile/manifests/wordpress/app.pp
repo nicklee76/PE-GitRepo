@@ -23,7 +23,7 @@ class profile::wordpress::app (
     notify => Class['apache'],
   }
   
-  package { 'php-gd' :
+  package { 'php-gd':
     ensure => present,
   }
   
