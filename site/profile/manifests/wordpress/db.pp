@@ -9,18 +9,20 @@ class profile::wordpress::db {
     },
   }
   
+/*
   file { '/var/tmp/wordpress.sql':
     ensure => file,
     source => 'https://s3-us-west-1.amazonaws.com/coolnick/wordpress.sql',
     before => Mysql::Db['wordpress'],
   }
+*/
   
   mysql::db { 'wordpress':
     user     => lookup('wordpress_username'),
     password => lookup('wordpress_passwd'),
     grant    => ['ALL'],
     host     => '%',
-    sql      => '/var/tmp/wordpress.sql',
+#    sql      => '/var/tmp/wordpress.sql',
   }
 
 }
