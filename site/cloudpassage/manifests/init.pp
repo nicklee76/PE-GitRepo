@@ -6,7 +6,7 @@
 class cloudpassage(
   $agentkey,
   $tags = undef,
-  $serverlabel = undef,
+  $serverlabel = "TEST",
   $managerepos = true,
 ) {
 
